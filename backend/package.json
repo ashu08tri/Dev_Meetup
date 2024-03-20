@@ -8,7 +8,8 @@
   },
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "npm i"
   },
   "keywords": [],
   "author": "Maximilian Schwarzmüller (Academind GmbH)",
