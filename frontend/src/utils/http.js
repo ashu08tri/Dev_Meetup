@@ -2,7 +2,7 @@ import { QueryClient } from "@tanstack/react-query";
 export const queryClient = new QueryClient();
 
 export async function fetchEvents({signal,searchTerms}) {
-    let url = 'http://localhost:3000/events';
+    let url = 'https://dev-meetup-api.vercel.app/events';
 
     if(searchTerms){
       url += '?search=' + searchTerms;
@@ -23,7 +23,7 @@ export async function fetchEvents({signal,searchTerms}) {
   }
 
   export async function createNewEvent(eventData) {
-    const response = await fetch(`http://localhost:3000/events`, {
+    const response = await fetch(`https://dev-meetup-api.vercel.app/events`, {
       method: 'POST',
       body: JSON.stringify(eventData),
       headers: {
@@ -44,7 +44,7 @@ export async function fetchEvents({signal,searchTerms}) {
   }
   
   export async function fetchSelectableImages({ signal }) {
-    const response = await fetch(`http://localhost:3000/events/images`, { signal });
+    const response = await fetch(`https://dev-meetup-api.vercel.app/events/images`, { signal });
   
     if (!response.ok) {
       const error = new Error('An error occurred while fetching the images');
@@ -59,7 +59,7 @@ export async function fetchEvents({signal,searchTerms}) {
   }
 
   export async function fetchEvent({ id, signal }) {
-    const response = await fetch(`http://localhost:3000/events/${id}`, { signal });
+    const response = await fetch(`https://dev-meetup-api.vercel.app/events/${id}`, { signal });
   
     if (!response.ok) {
       const error = new Error('An error occurred while fetching the event');
@@ -75,7 +75,7 @@ export async function fetchEvents({signal,searchTerms}) {
   
   
   export async function deleteEvent({ id }) {
-    const response = await fetch(`http://localhost:3000/events/${id}`, {
+    const response = await fetch(`https://dev-meetup-api.vercel.app/events/${id}`, {
       method: 'DELETE',
     });
   
@@ -90,7 +90,7 @@ export async function fetchEvents({signal,searchTerms}) {
   }
 
   export async function updateEvent({ id, event }) {
-    const response = await fetch(`http://localhost:3000/events/${id}`, {
+    const response = await fetch(`https://dev-meetup-api.vercel.app/events/${id}`, {
       method: 'PUT',
       body: JSON.stringify({ event }),
       headers: {
