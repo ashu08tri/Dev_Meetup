@@ -55,10 +55,7 @@ ul {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
 
-#main-header nav {
-  display: flex;
-  gap: 1rem;
-}
+
 
 #overview-section {
   margin: -8rem 0 3rem 0;
@@ -305,7 +302,7 @@ ul {
   padding: 2rem;
   position: fixed;
   top: 10vh;
-  left: calc(50% - 15rem);
+  left: calc(50% - 14rem);
   width: 30rem;
   max-height: 80vh;
   background: #e2e5eb;
@@ -433,6 +430,20 @@ ul {
 }
 .lds-ring div:nth-child(3) {
   animation-delay: -0.15s;
+}
+
+@media only screen and (max-width: 500px) {
+  #event-details-content{
+    width: 26rem;
+    margin: 2rem auto;
+  }
+  #event-details header {
+    width: 27rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 @keyframes lds-ring {
